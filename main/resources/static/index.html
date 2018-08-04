@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+</head>
+<!--<script type="text/javascript">
+    $(document).ready(function() {
+        $("#key").click(function() {
+        //alert(111)
+            $.ajax({
+                type : 'get',
+                url : 'http://localhost:8080/hello',
+                //contentType : 'application/json;charset=utf-8',
+                success : function(data) {
+                    debugger;
+                    alert(data);
+                }
+            });
+        });
+    });
+</script>-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("ad").click(function(){
+            if(addid.value) {
+                var a = "/hello/add?id="+addid.value+"&name="+addname.value;
+                open(a,'get',true);
+            }
+        });
+        $("fi").click(function(){
+            if(ff.value){
+                var a = "/hello/"+ff.value;
+                open(a,'get',true);
+            }
+        });
+        $("de").click(function(){
+            if(delid.value){
+                var a = "/hello/del/"+delid.value;
+                open(a,'get',true);
+            }
+        });
+        $("up").click(function(){
+            if(updid.value){
+                var a = "/hello/upd/?id="+updid.value+"&name="+updname.value;
+                open(a,'get',true);
+            }
+        });
+    });
+</script>
+<body>
+<h1>数据库操作</h1>
+<a href="/hello">数据查看</a><br>
+<!--<form name="add">--><h4>增加一个数据</h4>
+&nbsp&nbsp
+id
+&nbsp:&nbsp&nbsp
+<input type="number" id="addid"><br>
+name&nbsp: <input type="number" id="addname"> <ad>提交</ad>
+<!--</form>-->
+<!--<form name="del">--><h4>删除一个数据</h4>
+&nbsp&nbspid: <input type="number" id="delid"> <de>提交</de>
+<!--</form>-->
+<!--<form name="fff">--><h4>查找一个数据</h4>
+&nbsp&nbsp id: <input type="number" id="ff"> <fi>提交</fi>
+<!--</form>-->
+<!--<form name="upd">--><h4>修改一个数据</h4>
+&nbsp&nbsp
+id:
+&nbsp&nbsp<input type="number" id="updid"><br>
+name: <input type="number" id="updname"> <up>提交</up>
+<!--</form>-->
+<!--<input type="button" id="key" value="提交">-->
+</body>
+</html>
